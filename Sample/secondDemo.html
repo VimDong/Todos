@@ -1,0 +1,54 @@
+<!-- 了解 v-text、v-html 两个模版指令
+v-text 更新元素的 textContent，v-html 更新元素的 innerHtml
+v-if、v-show 两个模块显示隐藏
+v-if 为 false 时，不渲染元素；v-show 为 false 时仍然渲染元素，但隐藏不显示；
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 引入 Vue.js 库 -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style media="screen">
+      .show {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 数据渲染 v-text、v-html -->
+    <div id="app">
+      <p v-text="message"></p>
+      <p v-html="message"></p>
+      <p v-text="title"></p>
+      <p v-html="title"></p>
+
+      <!-- 控制模块的显示隐藏 v-if、v-show -->
+      <p class="show" v-if="isShow"></p>     <!-- v-if 为 false 时，不渲染元素 -->
+      <p class="show" v-show="isShow"></p>     <!-- v-if 为 false 时，渲染元素，设置为隐藏 -->
+
+      <!-- 渲染循环列表 v-for -->
+      <ul>
+        <!-- 类似于 for in -->
+        <li v-for="item in arr">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script type="text/javascript">
+    // 创建 Vue 对象
+    var app = new Vue({
+      el: "#app",     //el: 挂载点
+      data: {         //data: 数据
+        message: "Hello Vue",
+        title: "<h2>指令学习<h2>",
+        isShow: false,
+        arr: ['HTML','CSS','JavaScript']
+      },
+    });
+  </script>
+</html>
