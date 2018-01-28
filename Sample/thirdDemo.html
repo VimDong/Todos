@@ -1,0 +1,46 @@
+<!-- 事件绑定 v-on，v-on 可以用「@」替代 -->
+<!-- 属性绑定 v-bind，v-bind 可以用「:」替代 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue 模版指令</title>
+    <!-- 引入 Vue.js 库 -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style media="screen">
+      .show {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 事件绑定 v-on -->
+      <p class="show" v-on:click="speak"></p>
+      <!-- 简写事件绑定，「@」替代 v-on -->
+      <p class="show" @click="speak"></p>
+
+      <!-- 属性绑定 -->
+      <img src="thirdDemo/pmkz.png">
+      <img v-bind:src="url+imgName">
+      <!-- 简写属性绑定，「:」替代 v-bind -->
+      <img :src="url+imgName">
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#app",
+      data: {
+        url: 'thirdDemo/',
+        imgName: 'wzpt.png',
+      },
+      methods: {
+        speak: function() {
+          alert("Hello");
+        }
+      },
+    });
+  </script>
+</html>
