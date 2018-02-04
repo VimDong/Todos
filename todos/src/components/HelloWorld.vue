@@ -87,19 +87,19 @@
 <script>
 export default {
   name: 'HelloWorld',
-  //组件中，data 数据选项必须是函数
-  //ES6 写法
+  // 组件中，data 数据选项必须是函数
+  // ES6 写法
   // data () {
   //   return {
   //     msg: 'Welcome to Your Vue.js App'
   //   }
   // }
-  //传统函数写法
-  data: function() {
+  // 传统函数写法
+  data: function () {
     return {
-      msg: "HelloWorld",
-      title: "Vue 入门基础，- - 组件学习"
-    };
+      msg: 'HelloWorld',
+      title: 'Vue 入门基础，- - 组件学习'
+    }
   }
 }
 </script>

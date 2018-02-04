@@ -1,13 +1,17 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <listview></listview>
   </div>
 </template>
 
 <script>
+import listview from './components/List'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    listview
+  }
 }
 </script>
 
