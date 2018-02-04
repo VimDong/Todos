@@ -1,5 +1,6 @@
 <!-- 事件绑定 v-on，v-on 可以用「@」替代 -->
 <!-- 属性绑定 v-bind，v-bind 可以用「:」替代 -->
+<!-- 样式绑定 v-bind，样式是否启用用布尔值判断 -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +13,17 @@
         width: 100px;
         height: 100px;
         background: red;
+      }
+      .view {
+        width: 300px;
+        height: 30px;
+        border: 1px solid gray;
+        margin: 20px auto;
+        text-align: center;
+      }
+      .active {
+        background: red;
+        color: white;
       }
     </style>
   </head>
@@ -27,6 +39,11 @@
       <img v-bind:src="url+imgName">
       <!-- 简写属性绑定，「:」替代 v-bind -->
       <img :src="url+imgName">
+
+      <!-- 样式绑定 v-bind -->
+      <div class="view" v-bind:class="{active:isActive}">
+        {{message}}
+      </div>
     </div>
   </body>
   <script type="text/javascript">
@@ -35,6 +52,8 @@
       data: {
         url: 'thirdDemo/',
         imgName: 'wzpt.png',
+        message: 'vue 入门之模版指令',
+        isActive: true
       },
       methods: {
         speak: function() {
