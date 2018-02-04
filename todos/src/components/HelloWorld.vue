@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <h1>{{ title }}</h1>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -86,10 +87,19 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data () {
+  //组件中，data 数据选项必须是函数
+  //ES6 写法
+  // data () {
+  //   return {
+  //     msg: 'Welcome to Your Vue.js App'
+  //   }
+  // }
+  //传统函数写法
+  data: function() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "HelloWorld",
+      title: "Vue 入门基础，- - 组件学习"
+    };
   }
 }
 </script>
