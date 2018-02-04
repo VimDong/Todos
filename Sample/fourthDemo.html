@@ -1,0 +1,24 @@
+<!-- 双向数据绑定 v-model -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vue 模版指令</title>
+    <!-- 引入 Vue.js 库 -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input v-model="title">
+      <p>{{title}}</p>
+    </div>
+  </body>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: "#app",
+      data: {
+        title: "Vue 入门"
+      }
+    });
+  </script>
+</html>
