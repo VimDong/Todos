@@ -41,6 +41,8 @@
       <img :src="url+imgName">
 
       <!-- 样式绑定 v-bind -->
+      <!-- 如果 isActive 为真，给 div 添加 class 名称；
+      反之，不给 div 添加 class 名称 -->
       <div class="view" v-bind:class="{active:isActive}">
         {{message}}
       </div>
