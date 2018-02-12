@@ -2,8 +2,9 @@
 <template lang="html">
   <div class="view">
     <h1 class="title">{{ title }}</h1>
+    <input v-model="newItem" @keyup.enter="addItem" />
     <ul>
-      <li v-for="item in items" :key="item.id" v-bind:class="{finesh:item.isFinished}">
+      <li v-for="item in items" :key="item.id" v-bind:class="{finesh:item.isFinished}" @click="toggleFinish(item)">
       {{item.text}}
       </li>
     </ul>
@@ -27,7 +28,21 @@ export default {
           text: '今晚吃水果晚餐',
           isFinished: true
         }
-      ]
+      ],
+      newItem: ''
+    }
+  },
+  methods: {
+    toggleFinish: function (item) {
+      // 改变状态
+      item.isFinished = !item.isFinished
+    },
+    addItem: function () {
+      this.items.push({
+        text: this.newItem,
+        isFinished: false
+      })
+      this.newItem = ''
     }
   }
 }
