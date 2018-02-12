@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <headerview :title="title"></headerview>
     <img src="./assets/logo.png">
     <listview></listview>
   </div>
@@ -7,10 +8,18 @@
 
 <script>
 import listview from './components/List'
+import headerview from './components/Header'
+
 export default {
   name: 'App',
   components: {
-    listview
+    listview,
+    headerview
+  },
+  data () {
+    return {
+      title: 'Vue 入门学习'
+    }
   }
 }
 </script>
