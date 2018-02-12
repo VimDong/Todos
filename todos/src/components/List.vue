@@ -42,6 +42,7 @@ export default {
         text: this.newItem,
         isFinished: false
       })
+      this.$emit('fatherFn', this.newItem)
       this.newItem = ''
     }
   }

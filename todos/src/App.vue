@@ -2,7 +2,7 @@
   <div id="app">
     <headerview :title="title"></headerview>
     <img src="./assets/logo.png">
-    <listview></listview>
+    <listview @fatherFn="getDate"></listview>
   </div>
 </template>
 
@@ -19,6 +19,11 @@ export default {
   data () {
     return {
       title: 'Vue 入门学习'
+    }
+  },
+  methods: {
+    getDate (msg) {
+      console.log('新添加的 ITEM：' + msg)
     }
   }
 }
